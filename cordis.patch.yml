@@ -1,0 +1,13 @@
+# dsh-novelai-tags 的组合包补丁：把一个插件行插入 profile 的 loader 树。
+# 行里的 name 就是本包自身，由 profile 的 node_modules 解析。
+# config 全部可省略——省略时用插件内置默认值。
+- insert:
+    - id: novelai-tags
+      name: 'dsh-novelai-tags'
+      config:
+        # 接口站点，可换成自建/镜像；留空则用 https://tags-select.astrabrew.cn
+        origin: 'https://tags-select.astrabrew.cn'
+        # 单次请求超时（毫秒）
+        timeoutMs: 20000
+        # 是否注入 novelai-tags 系统提示词段（工具与技能不受影响）
+        systemPrompt: true

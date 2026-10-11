@@ -1,0 +1,47 @@
+{
+  "name": "dsh-novelai-tags",
+  "version": "1.0.0",
+  "description": "NovelAI 绘图标签查询插件：把 tags-select.astrabrew.cn 的公开只读接口包装成 DSH 工具（novelai_tags_search 单概念中英互查、novelai_tags_resolve 多概念批量解析），并注册 novelai-tags-search 技能与一段系统提示词用法说明。",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "novelai",
+    "tags",
+    "danbooru",
+    "prompt"
+  ],
+  "author": "yalwolf",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "skills",
+    "cordis.patch.yml",
+    "README.md",
+    "PROVENANCE.md"
+  ],
+  "scripts": {
+    "test": "node test/smoke.mjs",
+    "pack:check": "node scripts/pack-check.mjs"
+  },
+  "dsh": {
+    "engines": {
+      "dsh": ">=0.1.1-rc.2"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "engines": {
+    "node": ">=22.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT"
+}
